@@ -2,7 +2,7 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Got plans tonight?</h1>
-    <p class="lead">See what your friends are up to and plan your night!</p>
+    <p class="lead">See what your friends are up to, plan your night and RSVP!</p>
   </div>
 </header>
 
@@ -24,17 +24,15 @@
 <!-- / search container -->
 
 <div class="container">
-  <div class="row" ng-repeat="bar in bars">
-    <div class="col-lg-12 well">
-      <div class="col-md-2">
-      <img class="img-thumbnail" ng-src="{{ bar.img }}">
+  <div class="row well" ng-repeat="bar in bars">
+      <div class="img pull-left">
+      <img class="img-responsive" ng-src="{{ bar.image_url }}">
       </div>
-      <div class="col-md-10">
-        <h3>{{ bar.name }}</h3>
-        <button class="btn btn-default btn-sm">{{ bar.going }} going</button>
-        <p>{{ bar.description }}</p>
+      <div class="bar-details">
+        <h3 class="bar-name">{{ bar.name }}</h3>
+        <button class="btn btn-default btn-sm btn-going"><strong>{{ bar.going || 0 }}</strong> going +</button>
+        <p class="snippet-text">{{ bar.snippet_text }}</p>
       </div>
-    </div>
   </div>
 </div>
 <!-- / bars -->
