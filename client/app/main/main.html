@@ -1,4 +1,4 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Got plans tonight?</h1>
@@ -30,7 +30,7 @@
       </div>
       <div class="bar-details">
         <h3 class="bar-name">{{ bar.name }}</h3>
-        <button class="btn btn-default btn-sm btn-going"><strong>{{ bar.going || 0 }}</strong> going +</button>
+        <button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>{{ bar.going || 0 }}</strong> going +</button>
         <p class="snippet-text">{{ bar.snippet_text }}</p>
       </div>
   </div>

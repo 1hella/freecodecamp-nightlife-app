@@ -19,15 +19,6 @@ exports.show = function(req, res) {
   });
 };
 
-// // Get a single bar
-// exports.show = function(req, res) {
-//   Bar.findById(req.params.id, function (err, bar) {
-//     if(err) { return handleError(res, err); }
-//     if(!bar) { return res.status(404).send('Not Found'); }
-//     return res.json(bar);
-//   });
-// };
-
 function handleError(res, err) {
   return res.status(500).send(err);
 }
