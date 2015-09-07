@@ -32,7 +32,7 @@ angular.module('freecodecampNightlifeAppApp')
         // Error getting search data
         console.dir(JSON.parse(err.data));
 
-        $scope.error = "Error: " + JSON.parse(err.data).error.text;
+        $scope.error = 'Error: ' + JSON.parse(err.data).error.text;
       });
     };
 
