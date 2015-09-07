@@ -34,7 +34,7 @@ header {
 }
 
 .navbar-text {
-  margin-left: 15px;
+    margin-left: 15px;
 }
 
 .bar-name {
@@ -49,8 +49,28 @@ header {
 .bar-details {
     position: relative;
     left: 20px;
+    padding-left: 100px;
 }
 
 .btn-going {
     margin-bottom: 6px;
+    margin-left: 2px;
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+.flipped {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.fa-twitter {
+    color: #4099FF;
 }

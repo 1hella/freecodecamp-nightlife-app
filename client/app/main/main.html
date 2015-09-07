@@ -5,7 +5,6 @@
     <p class="lead">See what your friends are up to, plan your night and RSVP!</p>
   </div>
 </header>
-
 <div class="container">
   <div class="row">
     <form name="searchForm" role="form" ng-submit="searchForm.$valid && search(place)" novalidate>
@@ -20,24 +19,25 @@
       </div>
     </form>
   </div>
+  <img ng-show="isLoading" class="center flipped" src="../../assets/images/ajax-loader.gif">
+  <p class="text-center text-danger" ng-show="error">{{ error }}</p>
 </div>
 <!-- / search container -->
-
 <div class="container">
   <div class="row well" ng-repeat="bar in bars">
-      <div class="img pull-left">
+    <div class="img pull-left">
       <img class="img-responsive" ng-src="{{ bar.image_url }}">
-      </div>
-      <div class="bar-details">
-        <h3 class="bar-name">{{ bar.name }}</h3>
-        <button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>+{{ bar.usersGoing.length || 0 }}</strong> going</button>
-        <span class="text-success" ng-show="isGoing($index)">RSVP'd! <a class="text-danger" href="" ng-click="cancelRsvp($index)">Cancel</a> </span>
-        <p class="snippet-text">{{ bar.snippet_text }}</p>
-      </div>
+    </div>
+    <div class="bar-details">
+      <h3 class="bar-name"><a href="{{ bar.url }}">{{ bar.name }}</a></h3>
+      <button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>{{ bar.usersGoing.length || 0 }}</strong> going <i class="fa fa-twitter"></i></button>
+      <!-- <span class="text-success" ng-show="isGoing($index)">RSVP'd!</span> -->
+      <p><strong><span ng-show="bar.location.address[1]">{{ bar.location.address[1] + ", "}}</span>{{ bar.location.address[0] + ", " + bar.location.city + ", " + bar.location.state_code }}</strong></p>
+      <p class="snippet-text">{{ bar.snippet_text }}</p>
+    </div>
   </div>
 </div>
 <!-- / bars -->
-
 <footer class="footer">
   <div class="container">
     <p>Free Code Camp Basejump |
