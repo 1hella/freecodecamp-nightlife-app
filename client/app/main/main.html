@@ -30,7 +30,8 @@
       </div>
       <div class="bar-details">
         <h3 class="bar-name">{{ bar.name }}</h3>
-        <button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>{{ bar.going || 0 }}</strong> going +</button>
+        <button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>+{{ bar.usersGoing.length || 0 }}</strong> going</button>
+        <span class="text-success" ng-show="isGoing($index)">RSVP'd! <a class="text-danger" href="" ng-click="cancelRsvp($index)">Cancel</a> </span>
         <p class="snippet-text">{{ bar.snippet_text }}</p>
       </div>
   </div>
