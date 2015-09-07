@@ -29,8 +29,7 @@
       <img class="img-responsive" ng-src="{{ bar.image_url }}">
     </div>
     <div class="bar-details">
-      <h3 class="bar-name"><a href="{{ bar.url }}">{{ bar.name }}</a></h3>
-      <button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>{{ bar.usersGoing.length || 0 }}</strong> going <i class="fa fa-twitter"></i></button>
+      <h3 class="bar-name"><a href="{{ bar.url }}">{{ bar.name }}</a></h3><button class="btn btn-default btn-sm btn-going" ng-click="onIsGoing($index)"><strong>{{ bar.usersGoing.length || 0 }}</strong> going <i class="fa fa-twitter"></i></button>
       <!-- <span class="text-success" ng-show="isGoing($index)">RSVP'd!</span> -->
       <p><strong><span ng-show="bar.location.address[1]">{{ bar.location.address[1] + ", "}}</span>{{ bar.location.address[0] + ", " + bar.location.city + ", " + bar.location.state_code }}</strong></p>
       <p class="snippet-text">{{ bar.snippet_text }}</p>
